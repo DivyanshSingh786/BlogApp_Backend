@@ -13,7 +13,12 @@ const port = process.env.PORT || 5000 ;
 
 mongoose
   .connect(
-    "mongodb+srv://admin:wNbFztSsYnWKzd0o@cluster0.w4jyodm.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://admin:wNbFztSsYnWKzd0o@cluster0.w4jyodm.mongodb.net/?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  }
   )
   .then(() => app.listen(port))
   .then(() =>
