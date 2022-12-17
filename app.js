@@ -25,3 +25,6 @@ mongoose
     console.log(`Connected TO Database and Listening TO Localhost -${port} `)
   )
   .catch((err) => console.log(err));
+
+
+module.exports = app;
