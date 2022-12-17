@@ -1,12 +1,12 @@
-import express from "express";
-import {
+const express = require( "express");
+const {
   addBlog,
   deleteBlog,
   getAllBlogs,
   getById,
   getByUserId,
   updateBlog,
-} from "../controllers/blog-controller.js";
+} = require( "../controllers/blog-controller.js");
 const blogRouter = express.Router();
 
 blogRouter.get("/", getAllBlogs);
