@@ -7,13 +7,13 @@ const {
   getByUserId,
   updateBlog,
 } = require( "../controllers/blog-controller.js");
-const blogRouter = express.Router();
+const router = express.Router();
 
-blogRouter.get("/", getAllBlogs);
-blogRouter.post("/add", addBlog);
-blogRouter.put("/update/:id", updateBlog);
-blogRouter.get("/:id", getById);
-blogRouter.delete("/:id", deleteBlog);
-blogRouter.get("/user/:id", getByUserId);
+router.get("/", getAllBlogs);
+router.post("/add", addBlog);
+router.put("/update/:id", updateBlog);
+router.get("/:id", getById);
+router.delete("/:id", deleteBlog);
+router.get("/user/:id", getByUserId);
 
-module.exports = blogRouter;
+module.exports = router;

@@ -7,4 +7,4 @@ router.get("/", getAllUser);
 router.post("/signup",signup);
 router.post("/login", login)
 
-module.export = router;
+module.exports = router;

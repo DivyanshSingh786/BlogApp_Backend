@@ -2,7 +2,7 @@ const mongoose = require( "mongoose");
 const Blog = require( "../model/Blog.js");
 const User = require( "../model/User.js");
 
-export const getAllBlogs = async (req, res, next) => {
+exports.getAllBlogs = async (req, res, next) => {
   let blogs;
   try {
     blogs = await Blog.find().populate("user");
@@ -15,7 +15,7 @@ export const getAllBlogs = async (req, res, next) => {
   return res.status(200).json({ blogs });
 };
 
-export const addBlog = async (req, res, next) => {
+exports.addBlog = async (req, res, next) => {
   const { title, description, image, user } = req.body;
 
   let existingUser;
@@ -48,7 +48,7 @@ export const addBlog = async (req, res, next) => {
   return res.status(200).json({ blog });
 };
 
-export const updateBlog = async (req, res, next) => {
+exports.updateBlog = async (req, res, next) => {
   const { title, description } = req.body;
   const blogId = req.params.id;
   let blog;
@@ -66,7 +66,7 @@ export const updateBlog = async (req, res, next) => {
   return res.status(200).json({ blog });
 };
 
-export const getById = async (req, res, next) => {
+exports.getById = async (req, res, next) => {
   const id = req.params.id;
   let blog;
   try {
@@ -80,7 +80,7 @@ export const getById = async (req, res, next) => {
   return res.status(200).json({ blog });
 };
 
-export const deleteBlog = async (req, res, next) => {
+exports.deleteBlog = async (req, res, next) => {
   const id = req.params.id;
 
   let blog;
@@ -97,7 +97,7 @@ export const deleteBlog = async (req, res, next) => {
   return res.status(200).json({ message: "Successfully Delete" });
 };
 
-export const getByUserId = async (req, res, next) => {
+exports.getByUserId = async (req, res, next) => {
   const userId = req.params.id;
   let userBlogs;
   try {
