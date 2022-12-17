@@ -16,4 +16,4 @@ blogRouter.get("/:id", getById);
 blogRouter.delete("/:id", deleteBlog);
 blogRouter.get("/user/:id", getByUserId);
 
-export default blogRouter;
+module.exports = blogRouter;
